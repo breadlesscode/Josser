@@ -104,14 +104,14 @@ class Client
         }
 
         $requestDTO = $protocol->getRequestDataTransferObject($request);
-        $encodedRequest = $protocol->getEncoder()->encode($requestDTO, null);
+        $encodedRequest = $protocol->getEncoder()->encode($requestDTO, '');
         $encodedResponse = $transport->send($encodedRequest);
 
         if($protocol->isNotification($request)) {
             return new NoResponse();
         }
 
-        $responseDTO = $protocol->getDecoder()->decode($encodedResponse, null);
+        $responseDTO = $protocol->getDecoder()->decode($encodedResponse, '');
         $response = $protocol->createResponse($responseDTO);
 
         if(!$protocol->match($request, $response)) {
