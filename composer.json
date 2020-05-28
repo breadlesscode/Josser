@@ -1,5 +1,5 @@
 {
-    "name": "alanbem/josser",
+    "name": "breadlesscode/josser",
     "description": "JSON-RPC client for PHP",
     "keywords": ["json-rpc", "jsonrpc", "rpc", "json", "client"],
     "homepage": "http://github.com/alanbem/josser",
